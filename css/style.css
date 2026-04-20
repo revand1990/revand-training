@@ -257,3 +257,48 @@ section {
   .about-grid { grid-template-columns: 200px 1fr; align-items: start; }
   .about-logo-wrap { justify-content: flex-start; }
 }
+
+/* === Services === */
+.services-section { border-bottom: 1px solid var(--border); }
+.services-section--alt { background: var(--surface); }
+.services-group-title {
+  color: var(--red);
+  margin-bottom: 1rem;
+}
+.services-group-desc { margin-bottom: 1.25rem; }
+.age-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  padding-left: 0;
+}
+.age-list li {
+  padding: 0.6rem 1rem;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 4px;
+  color: var(--text);
+  font-size: 0.95rem;
+}
+.service-cards {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+.service-card {
+  background: var(--bg);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+.service-card h4 { color: var(--yellow); font-size: 1rem; font-weight: 600; }
+@media (min-width: 640px) {
+  .service-cards { grid-template-columns: 1fr 1fr; }
+  .age-list { flex-direction: row; flex-wrap: wrap; }
+  .age-list li { flex: 1 1 auto; }
+}
