@@ -1,7 +1,7 @@
 export const render = () => `
   <section class="page-header">
     <div class="container">
-      <h2 data-i18n="about.title">Wie is Revand?</h2>
+      <img src="Revand logo.png" alt="Revand" class="page-header-logo" />
     </div>
   </section>
 
@@ -11,6 +11,7 @@ export const render = () => `
         <img src="Ruben foto.png" alt="Ruben van Dijk" class="about-photo" />
       </div>
       <div class="about-text">
+        <h2 data-i18n="about.title">Wie is Revand?</h2>
         <p data-i18n="about.intro.p1"></p>
         <p data-i18n="about.intro.p2"></p>
         <p data-i18n="about.intro.p3"></p>
