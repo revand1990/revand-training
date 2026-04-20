@@ -47,23 +47,34 @@ function handleClick(e) {
   const link = e.target.closest('[data-link]');
   if (!link) return;
   e.preventDefault();
-  const path = new URL(link.href).pathname;
-  if (path === location.pathname) return;
-  history.pushState(null, '', path);
-  navigate(path);
+  try {
+    const path = new URL(link.href).pathname;
+    if (path === currentPath) return;
+    history.pushState(null, '', path);
+    navigate(path);
+  } catch (err) {
+    console.error('Navigation error:', err);
+  }
 }
 
 const hamburger = document.getElementById('hamburger');
 const navMenu = document.getElementById('nav-menu');
-hamburger.addEventListener('click', () => navMenu.classList.toggle('open'));
-navMenu.addEventListener('click', () => navMenu.classList.remove('open'));
+if (hamburger && navMenu) {
+  hamburger.addEventListener('click', () => navMenu.classList.toggle('open'));
+  navMenu.addEventListener('click', () => navMenu.classList.remove('open'));
+}
 
-document.getElementById('lang-toggle').addEventListener('click', () => {
+document.getElementById('lang-toggle')?.addEventListener('click', () => {
   import('./lang.js').then(({ toggleLang }) => toggleLang());
 });
 
 document.addEventListener('click', handleClick);
 window.addEventListener('popstate', () => navigate(location.pathname));
 
-await initLang();
-navigate(location.pathname);
+try {
+  await initLang();
+  navigate(location.pathname);
+} catch (err) {
+  console.error('App initialization failed:', err);
+  document.getElementById('app').innerHTML = '<p style="color:#aaa;padding:2rem">Something went wrong. Please reload.</p>';
+}
