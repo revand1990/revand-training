@@ -61,15 +61,17 @@ export const init = () => {
       if (res.ok) {
         form.reset();
         feedback.className = 'form-feedback success';
-        feedback.textContent = document.querySelector('[data-i18n="contact.success"]')?.textContent
-          || 'Bedankt voor je bericht!';
+        import('../lang.js').then(({ getString }) => {
+          feedback.textContent = getString('contact.success');
+        });
       } else {
         throw new Error('submit failed');
       }
     } catch {
       feedback.className = 'form-feedback error';
-      feedback.textContent = document.querySelector('[data-i18n="contact.error"]')?.textContent
-        || 'Er ging iets mis.';
+      import('../lang.js').then(({ getString }) => {
+        feedback.textContent = getString('contact.error');
+      });
     } finally {
       btn.disabled = false;
     }

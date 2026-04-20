@@ -60,8 +60,15 @@ function handleClick(e) {
 const hamburger = document.getElementById('hamburger');
 const navMenu = document.getElementById('nav-menu');
 if (hamburger && navMenu) {
-  hamburger.addEventListener('click', () => navMenu.classList.toggle('open'));
-  navMenu.addEventListener('click', () => navMenu.classList.remove('open'));
+  hamburger.setAttribute('aria-expanded', 'false');
+  hamburger.addEventListener('click', () => {
+    const open = navMenu.classList.toggle('open');
+    hamburger.setAttribute('aria-expanded', String(open));
+  });
+  navMenu.addEventListener('click', () => {
+    navMenu.classList.remove('open');
+    hamburger.setAttribute('aria-expanded', 'false');
+  });
 }
 
 document.getElementById('lang-toggle')?.addEventListener('click', () => {

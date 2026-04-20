@@ -57,6 +57,7 @@ function updateToggleButton() {
 }
 
 export function getCurrentLang() { return currentLang; }
+export function getString(key) { return strings[key] || key; }
 
 export async function initLang() {
   await loadLang(currentLang);
