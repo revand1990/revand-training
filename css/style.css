@@ -230,7 +230,7 @@ section {
 /* === About === */
 .about-heading {
   color: var(--text);
-  margin-bottom: 2rem;
+  margin-bottom: 0;
 }
 .about-grid {
   display: grid;
@@ -271,7 +271,7 @@ section {
 }
 @media (min-width: 768px) {
   .about-grid { grid-template-columns: 200px 1fr; align-items: start; }
-  .about-photo-wrap { justify-content: flex-start; align-items: flex-start; padding-top: 4rem; }
+  .about-photo-wrap { justify-content: flex-start; align-items: flex-start; padding-top: calc(2.25rem * 1.1 + 1.5rem); }
   .about-photo { width: 196px; height: 252px; }
 }
 
