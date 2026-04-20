@@ -229,8 +229,18 @@ section {
   gap: 3rem;
   padding-top: 1rem;
 }
-.about-logo-wrap { display: flex; justify-content: center; }
-.about-logo { width: 180px; height: 180px; object-fit: contain; }
+.about-photo-wrap {
+  display: flex;
+  justify-content: center;
+}
+.about-photo {
+  width: 260px;
+  height: 320px;
+  object-fit: contain;
+  object-position: bottom;
+  background: var(--red);
+  border-radius: 8px;
+}
 .about-text { display: flex; flex-direction: column; gap: 1.5rem; }
 .about-text h3 { color: var(--yellow); margin-top: 0.5rem; }
 .timeline {
@@ -252,8 +262,9 @@ section {
   font-weight: 600;
 }
 @media (min-width: 768px) {
-  .about-grid { grid-template-columns: 200px 1fr; align-items: start; }
-  .about-logo-wrap { justify-content: flex-start; }
+  .about-grid { grid-template-columns: 280px 1fr; align-items: start; }
+  .about-photo-wrap { justify-content: flex-start; }
+  .about-photo { width: 280px; height: 360px; }
 }
 
 /* === Services === */
