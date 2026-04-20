@@ -1,7 +1,7 @@
 # Revand Physical Training — Website Design Spec
 
 **Date:** 2026-04-20  
-**Project:** revand-training.nl  
+**Project:** revandtraining.nl  
 **Scope:** Informational SPA with NL/EN language toggle and contact form
 
 ---
@@ -158,7 +158,7 @@ Navigation updates the URL via `history.pushState` and mounts the matching view.
 - **Host:** Netlify (free tier)
 - **Deploy:** Connect GitHub repo → auto-deploy on push to `main`
 - **SPA routing:** `_redirects` file with `/* /index.html 200`
-- **Domain:** revand-training.nl — configured via Netlify DNS or CNAME
+- **Domain:** revandtraining.nl — configured via Netlify DNS or CNAME
 
 ---
 
