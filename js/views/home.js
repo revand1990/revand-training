@@ -1,8 +1,4 @@
 export const render = () => `
-  <div class="wip-banner">
-    <p data-i18n="home.wip">🚧 Website in opbouw — meer informatie volgt snel.</p>
-  </div>
-
   <section class="hero">
     <div class="container hero-inner">
       <img src="Revand logo.png" alt="Revand Physical Training" class="hero-logo" />
