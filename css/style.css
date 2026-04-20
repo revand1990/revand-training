@@ -246,11 +246,11 @@ section {
   height: 224px;
   object-fit: contain;
   object-position: bottom;
-  background: var(--red);
+  background: var(--bordeaux);
   border-radius: 8px;
 }
 .about-text { display: flex; flex-direction: column; gap: 1.5rem; }
-.about-text h3 { color: var(--yellow); margin-top: 0.5rem; padding-left: 0.75rem; border-left: 3px solid var(--bordeaux); }
+.about-text h3 { color: var(--yellow); margin-top: 0.5rem; padding-left: 0.75rem; border-left: 3px solid var(--red); }
 .timeline {
   list-style: none;
   display: flex;
@@ -271,7 +271,7 @@ section {
 }
 @media (min-width: 768px) {
   .about-grid { grid-template-columns: 200px 1fr; align-items: start; }
-  .about-photo-wrap { justify-content: flex-start; align-items: flex-start; }
+  .about-photo-wrap { justify-content: flex-start; align-items: flex-start; padding-top: 4rem; }
   .about-photo { width: 196px; height: 252px; }
 }
 
@@ -504,29 +504,29 @@ textarea:focus-visible {
   font-size: 1rem;
 }
 
-/* === Bordeaux side accent stripe === */
+/* === Red side accent stripe === */
 body::before {
   content: '';
   position: fixed;
   left: 0; top: 0; bottom: 0;
   width: 4px;
-  background: var(--bordeaux);
+  background: var(--red);
   z-index: 200;
 }
 
-/* === Bordeaux top accent on page headers === */
+/* === Red top accent on page headers === */
 .page-header {
-  border-top: 3px solid var(--bordeaux);
+  border-top: 3px solid var(--red);
 }
 
-/* === Bordeaux left accent on USP cards === */
+/* === Red left accent on USP cards === */
 .usp-card {
-  border-left: 3px solid var(--bordeaux);
+  border-left: 3px solid var(--red);
 }
 
-/* === Bordeaux left accent on service cards === */
+/* === Red left accent on service cards === */
 .service-card {
-  border-left: 3px solid var(--bordeaux);
+  border-left: 3px solid var(--red);
 }
 
 
