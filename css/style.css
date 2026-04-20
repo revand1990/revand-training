@@ -230,13 +230,19 @@ section {
 /* === About === */
 .about-heading {
   color: var(--text);
-  margin-bottom: 0;
+}
+.about-wingchun-heading {
+  color: var(--yellow);
+  padding-left: 0.75rem;
+  border-left: 3px solid var(--red);
 }
 .about-grid {
   display: grid;
   grid-template-columns: 1fr;
-  gap: 2rem;
+  gap: 1.5rem;
+  margin-bottom: 3rem;
 }
+.about-grid-spacer { display: none; }
 .about-photo-wrap {
   display: flex;
   justify-content: center;
@@ -249,30 +255,35 @@ section {
   background: var(--bordeaux);
   border-radius: 8px;
 }
+.about-photo--side {
+  background: none;
+  object-fit: cover;
+  object-position: center;
+  height: 220px;
+}
 .about-text { display: flex; flex-direction: column; gap: 1.5rem; }
-.about-text h3 { color: var(--yellow); margin-top: 0.5rem; padding-left: 0.75rem; border-left: 3px solid var(--red); }
-.timeline {
-  list-style: none;
+.about-group-photo-wrap {
   display: flex;
-  flex-direction: column;
-  gap: 0.75rem;
+  justify-content: center;
+  margin-top: 1.5rem;
 }
-.timeline li {
-  display: flex;
-  flex-direction: column;
-  gap: 0.1rem;
-  padding-left: 1rem;
-  border-left: 2px solid var(--red);
-}
-.timeline-period {
-  font-size: 0.8rem;
-  color: var(--yellow);
-  font-weight: 600;
+.about-group-photo {
+  max-width: 100%;
+  width: 700px;
+  border-radius: 8px;
+  display: block;
 }
 @media (min-width: 768px) {
-  .about-grid { grid-template-columns: 200px 1fr; align-items: start; }
-  .about-photo-wrap { justify-content: flex-start; align-items: flex-start; padding-top: calc(2.25rem * 1.1 + 1.5rem); }
+  .about-grid {
+    grid-template-columns: 200px 1fr;
+    column-gap: 2rem;
+    row-gap: 1.5rem;
+    align-items: start;
+  }
+  .about-grid-spacer { display: block; }
+  .about-photo-wrap { justify-content: flex-start; }
   .about-photo { width: 196px; height: 252px; }
+  .about-photo--side { height: 220px; width: 196px; }
 }
 
 /* === Services === */
