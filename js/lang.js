@@ -30,6 +30,12 @@ export function applyTranslations() {
       el.textContent = strings[key];
     }
   });
+  document.querySelectorAll('[data-i18n-placeholder]').forEach(el => {
+    const key = el.dataset.i18nPlaceholder;
+    if (strings[key] !== undefined) {
+      el.placeholder = strings[key];
+    }
+  });
 }
 
 export function toggleLang() {
