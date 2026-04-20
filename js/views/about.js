@@ -1,7 +1,7 @@
 export const render = () => `
   <section class="page-header">
     <div class="container">
-      <h2 data-i18n="about.title">Over Revand</h2>
+      <h2 data-i18n="about.title">Wie is Revand?</h2>
     </div>
   </section>
 
@@ -11,10 +11,13 @@ export const render = () => `
         <img src="Revand logo.png" alt="Revand" class="about-logo" />
       </div>
       <div class="about-text">
-        <p data-i18n="about.background"></p>
+        <p data-i18n="about.intro.p1"></p>
+        <p data-i18n="about.intro.p2"></p>
+        <p data-i18n="about.intro.p3"></p>
 
-        <h3 data-i18n="about.mission.title">Missie</h3>
-        <p data-i18n="about.mission.text"></p>
+        <h3 data-i18n="about.wingchun.title">Wat is Wing Chun Kung Fu?</h3>
+        <p data-i18n="about.wingchun.text1"></p>
+        <p data-i18n="about.wingchun.text2"></p>
 
         <h3 data-i18n="about.experience.title">Leservaring</h3>
         <ul class="timeline">

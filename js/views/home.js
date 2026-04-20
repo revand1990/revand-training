@@ -1,30 +1,36 @@
 export const render = () => `
+  <div class="wip-banner">
+    <p data-i18n="home.wip">🚧 Website in opbouw — meer informatie volgt snel.</p>
+  </div>
+
   <section class="hero">
     <div class="container hero-inner">
       <img src="Revand logo.png" alt="Revand Physical Training" class="hero-logo" />
-      <h1 data-i18n="home.hero.tagline">Fysiek en mentaal sterker worden</h1>
-      <a href="/contact" class="btn btn-primary" data-link data-i18n="home.hero.cta">Neem contact op</a>
-    </div>
-  </section>
-
-  <section class="intro">
-    <div class="container">
-      <p class="intro-text" data-i18n="home.intro"></p>
-    </div>
-  </section>
-
-  <section class="teasers">
-    <div class="container teasers-grid">
-      <div class="teaser-card">
-        <h3 data-i18n="home.youth.title">Jeugdprogramma's</h3>
-        <p data-i18n="home.youth.desc"></p>
-        <a href="/services" class="btn btn-outline" data-link data-i18n="home.youth.link">Bekijk aanbod</a>
+      <h1 data-i18n="home.hero.tagline">Vind de Vonk in jezelf</h1>
+      <p class="hero-subtitle" data-i18n="home.hero.subtitle"></p>
+      <div class="hero-ctas">
+        <a href="/services" class="btn btn-primary" data-link data-i18n="home.hero.cta1">Bekijk het aanbod</a>
+        <a href="/contact" class="btn btn-outline" data-link data-i18n="home.hero.cta2">Neem contact op</a>
       </div>
-      <div class="teaser-card">
-        <h3 data-i18n="home.adult.title">Volwassenen & Bedrijven</h3>
-        <p data-i18n="home.adult.desc"></p>
-        <a href="/services" class="btn btn-outline" data-link data-i18n="home.adult.link">Bekijk aanbod</a>
+    </div>
+  </section>
+
+  <section class="usps">
+    <div class="container usps-grid">
+      <div class="usp-card">
+        <h3 data-i18n="home.usp1.title"></h3>
+        <p data-i18n="home.usp1.desc"></p>
+      </div>
+      <div class="usp-card">
+        <h3 data-i18n="home.usp2.title"></h3>
+        <p data-i18n="home.usp2.desc"></p>
+      </div>
+      <div class="usp-card">
+        <h3 data-i18n="home.usp3.title"></h3>
+        <p data-i18n="home.usp3.desc"></p>
       </div>
     </div>
   </section>
 `;
+
+export const init = () => {};

@@ -1,7 +1,7 @@
 export const render = () => `
   <section class="page-header">
     <div class="container">
-      <h2 data-i18n="contact.title">Contact</h2>
+      <h2 data-i18n="contact.title">Kom in contact</h2>
       <p data-i18n="contact.subtitle"></p>
     </div>
   </section>
@@ -28,11 +28,15 @@ export const render = () => `
       <div class="contact-info">
         <div class="contact-info-item">
           <span class="contact-info-label" data-i18n="contact.phone.label">Telefoon</span>
-          <a href="tel:+31612345678">+31 6 12 34 56 78</a>
+          <a href="tel:+31617736446">06 177 36 446</a>
         </div>
         <div class="contact-info-item">
-          <span class="contact-info-label" data-i18n="contact.location.label">Locatie</span>
-          <span data-i18n="contact.location.value">Haarlem Noord</span>
+          <span class="contact-info-label" data-i18n="contact.address.label">Locatie</span>
+          <span class="contact-address">
+            <span data-i18n="contact.address.line1">Wu Dae Sportcentrum</span>
+            <span data-i18n="contact.address.line2">Balistraat 4</span>
+            <span data-i18n="contact.address.line3">2022 XZ Haarlem</span>
+          </span>
         </div>
       </div>
     </div>
