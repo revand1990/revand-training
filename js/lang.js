@@ -1,13 +1,23 @@
 let strings = {};
 let currentLang = localStorage.getItem('lang') || 'nl';
+let loading = false;
 
 export async function loadLang(lang) {
-  const res = await fetch(`/lang/${lang}.json`);
-  strings = await res.json();
-  currentLang = lang;
-  localStorage.setItem('lang', lang);
-  document.documentElement.lang = lang;
-  updateToggleButton();
+  if (loading) return;
+  loading = true;
+  try {
+    const res = await fetch(`/lang/${lang}.json`);
+    if (!res.ok) throw new Error(`Failed to load language: ${lang}`);
+    strings = await res.json();
+    currentLang = lang;
+    localStorage.setItem('lang', lang);
+    document.documentElement.lang = lang;
+    updateToggleButton();
+  } catch (err) {
+    console.error('Language load error:', err);
+  } finally {
+    loading = false;
+  }
 }
 
 export function applyTranslations() {
@@ -24,10 +34,15 @@ export function applyTranslations() {
 
 export function toggleLang() {
   const next = currentLang === 'nl' ? 'en' : 'nl';
-  loadLang(next).then(() => {
-    applyTranslations();
-    import('./app.js').then(({ rerenderCurrent }) => rerenderCurrent());
-  });
+  const btn = document.getElementById('lang-toggle');
+  if (btn) btn.disabled = true;
+  loadLang(next)
+    .then(() => {
+      applyTranslations();
+      return import('./app.js').then(({ rerenderCurrent }) => rerenderCurrent());
+    })
+    .catch(err => console.error('Language toggle failed:', err))
+    .finally(() => { if (btn) btn.disabled = false; });
 }
 
 function updateToggleButton() {
