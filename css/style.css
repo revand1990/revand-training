@@ -3,6 +3,7 @@
   --bg: #0a0a0a;
   --surface: #1a1a1a;
   --red: #cc0000;
+  --bordeaux: #7a1c2e;
   --text: #ffffff;
   --text-muted: #aaaaaa;
   --yellow: #c8a84b;
@@ -249,7 +250,7 @@ section {
   border-radius: 8px;
 }
 .about-text { display: flex; flex-direction: column; gap: 1.5rem; }
-.about-text h3 { color: var(--yellow); margin-top: 0.5rem; }
+.about-text h3 { color: var(--yellow); margin-top: 0.5rem; padding-left: 0.75rem; border-left: 3px solid var(--bordeaux); }
 .timeline {
   list-style: none;
   display: flex;
@@ -503,33 +504,31 @@ textarea:focus-visible {
   font-size: 1rem;
 }
 
-/* === Hero tagline yellow === */
-.hero h1 { color: var(--yellow); }
-
-/* === Red side accent stripe === */
+/* === Bordeaux side accent stripe === */
 body::before {
   content: '';
   position: fixed;
   left: 0; top: 0; bottom: 0;
   width: 4px;
-  background: var(--red);
+  background: var(--bordeaux);
   z-index: 200;
 }
 
-/* === Red top accent on page headers === */
+/* === Bordeaux top accent on page headers === */
 .page-header {
-  border-top: 3px solid var(--red);
+  border-top: 3px solid var(--bordeaux);
 }
 
-/* === Yellow left accent on USP cards === */
+/* === Bordeaux left accent on USP cards === */
 .usp-card {
-  border-left: 3px solid var(--yellow);
+  border-left: 3px solid var(--bordeaux);
 }
 
-/* === Yellow left accent on service cards === */
+/* === Bordeaux left accent on service cards === */
 .service-card {
-  border-left: 3px solid var(--yellow);
+  border-left: 3px solid var(--bordeaux);
 }
+
 
 /* === Services desktop spacing override === */
 @media (min-width: 768px) {
