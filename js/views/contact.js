@@ -1,7 +1,7 @@
 export const render = () => `
   <section class="page-header">
     <div class="container">
-      <h2 data-i18n="contact.title">Kom in contact</h2>
+      <h2 data-i18n="contact.title">Contact</h2>
       <p data-i18n="contact.subtitle"></p>
     </div>
   </section>
@@ -32,11 +32,11 @@ export const render = () => `
         </div>
         <div class="contact-info-item">
           <span class="contact-info-label" data-i18n="contact.address.label">Locatie</span>
-          <span class="contact-address">
-            <span data-i18n="contact.address.line1">Wu Dae Sportcentrum</span>
+          <address class="contact-address">
+            <span data-i18n="contact.address.line1">Sportcentrum Wu Dae</span>
             <span data-i18n="contact.address.line2">Balistraat 4</span>
             <span data-i18n="contact.address.line3">2022 XZ Haarlem</span>
-          </span>
+          </address>
         </div>
       </div>
     </div>
