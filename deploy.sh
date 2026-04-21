@@ -33,6 +33,7 @@ done
 # Losse bestanden
 for file in \
   "index.html" \
+  ".htaccess" \
   "Revand logo.png" \
   "Ruben foto.png" \
   "Goksel and I.JPG" \
