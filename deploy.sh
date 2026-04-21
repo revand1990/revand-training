@@ -14,10 +14,13 @@ trap "rm -f $BATCH" EXIT
 
 add_file() {
   local file="$1"
+  # Strip leading slash from SFTP_PATH so paths stay relative to SFTP home
+  local base="${SFTP_PATH#/}"
+  local remote="${base}${file}"
   local remote_dir
-  remote_dir=$(dirname "${SFTP_PATH}${file}")
-  echo "-mkdir \"$remote_dir\"" >> "$BATCH"
-  echo "put \"$file\" \"${SFTP_PATH}${file}\"" >> "$BATCH"
+  remote_dir=$(dirname "$remote")
+  [ "$remote_dir" != "." ] && echo "-mkdir \"$remote_dir\"" >> "$BATCH"
+  echo "put \"$file\" \"$remote\"" >> "$BATCH"
 }
 
 # Directories
@@ -42,9 +45,9 @@ echo "Deploying naar ${SFTP_HOST}..."
 echo "(Voer je Strato-wachtwoord in als daarom wordt gevraagd)"
 echo ""
 
-sftp -P 22 -b "$BATCH" \
+sftp -P 22 \
   -o StrictHostKeyChecking=accept-new \
-  "${SFTP_USER}@${SFTP_HOST}"
+  "${SFTP_USER}@${SFTP_HOST}" < "$BATCH"
 
 echo ""
 echo "Klaar! De website is bijgewerkt."
